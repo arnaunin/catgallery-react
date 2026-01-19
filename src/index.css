@@ -24,8 +24,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -72,27 +70,65 @@ button:focus-visible {
   padding-left: 0;
 }
 
-.galeriaGatos ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+.galeriaGatos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
   gap: 10px;
-  list-style: none;
-  padding: 0;
+}
+
+.galeriaGatos ul {  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 200px);
+  gap: 10px;
+
+  width: 100%;                 /* <-- permite que el grid se haga más pequeño */
+  max-width: 620px;            /* 3 columnas máx */
+  margin: 0 auto;              /* centrar */
+}
+
+.galeriaGatos li {
+  width: 200px;
 }
 
 .galeriaGatos img {
-  width: 100%;
+  width: 200px;
   height: 200px;        /* fuerza la altura */
   object-fit: cover;    /* recorta sin deformar */
   border-radius: 8px;   /* opcional */
 }
 
-#loadingData {
-  text-align: center;    /* centra el texto */
-  width: 100vw;           /* ocupa todo el ancho del contenedor */
+#loadingData, #error{   
   font-size: 1.5rem;
   font-weight: bold;
   color: #333;
-  list-style: none;
-  margin-top: 2rem;      /* espacio opcional encima */
+  margin-top: 2rem;
+}
+
+#heartDiv {
+  cursor: pointer;
+  display: inline-block;
+}
+/* Contenedor de cada imagen favorita */
+.favorito-item {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* <-- CENTRA EL BOTÓN */
+}
+
+/* Aseguramos imagen correcta */
+.favorito-item img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn-eliminar {
+  background-color: white;
+  margin-top: 5px;
 }

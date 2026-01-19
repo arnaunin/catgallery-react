@@ -5,12 +5,12 @@ const Home = () => {
   return (
     <div>
       <h1>CatGallery con The Cat API</h1>
-      <Galeria />
       <ul className="listaSinPuntos">
         <li>
             <Link to={'/favoritos'}>Gatos Favoritos</Link>
         </li>
       </ul>
+      <Galeria />
     </div>
   );
 }
