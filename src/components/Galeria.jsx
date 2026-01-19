@@ -129,8 +129,8 @@ const Galeria = () => {
   return (
     <>
       <div className='galeriaGatos'>
-        {/*{error && <p id='error'>Error: {error}</p>}
-        {loading && <p id='loadingData'>Loading data...</p>}*/}
+        {error && <p id='error'>Error: {error}</p>}
+        {loading && <p id='loadingData'>Loading data...</p>}
         <ul className='listaSinPuntos'>
           {gatos.map((gato) => {
             return (
